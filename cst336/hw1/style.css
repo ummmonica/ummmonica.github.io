@@ -1,0 +1,98 @@
+body {
+    background-color: rgb(242, 223, 194);
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;  /* value between 300 and 800 */
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    font-size: 1em;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+figure {
+    text-align: center;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    font-family: "Smooch Sans", sans-serif;
+    /* font-optical-sizing: auto; */
+    font-weight: 600;
+    font-style: normal;
+    font-size: 3em;
+}
+
+.info {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+footer {
+    font-size: 0.8em;
+    color: gray;
+    text-align: center;
+    clear: both; /* to clear floats and recenter footer, affected by image*/
+}
+
+main {
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;  /* value between 300 and 800 */
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    font-size: 1em;
+}
+
+#heading {
+    font-size: 1.6em;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+nav {
+    text-align: center;
+    margin-top: 20px;
+}
+
+nav a {
+    padding: 15px;
+    padding-bottom: 4px;
+    font-size: 1em;
+    text-decoration: none;
+    color: black;
+}
+
+nav a:hover {                     
+    font-size: 1.1em;
+    transition: .5s;
+    color: rgb(148, 3, 3);
+}
+
+nav a.active {
+    font-weight:bold;
+    border-bottom: 2px solid black;
+}
+
+/* for 'first programmer' */
+#ada {
+    float: left; /*this allows for text to wrap around image*/
+    margin-right: 25px;
+    margin-bottom: 20px;
+}
+
+/* targets the div */
+.ada_bio {
+    text-align: justify;
+}
+
+/* targets the paragraph inside the div */
+.ada_bio p {
+    margin-bottom: 15px;
+}
