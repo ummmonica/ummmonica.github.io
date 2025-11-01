@@ -1,0 +1,160 @@
+body {
+    background-color:rgb(28, 26, 26);
+    color:white;
+
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;  /* value between 300 and 800 */
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    font-size: 1em;
+}
+
+h1 {
+    font-family: "WindSong", cursive;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    font-size: 4em;
+    margin-bottom: 10px;
+    color: orange;
+}
+
+header, main, nav, footer {
+    text-align:center;
+}
+
+/* Adds more space between header and navigation links */
+nav {
+    margin-top: 30px;
+}
+
+nav a {
+    padding: 15px;
+    padding-bottom: 4px;
+    font-size: 1.2em;
+    text-decoration: none; /* removes underline */
+    color: white; /* links are blue by default */
+}
+
+/* for hovering over links */
+nav a:hover {
+    /* border-bottom: 2px solid orange; */
+    font-size: 1.5em;
+    transition: .9s;
+}
+
+/* For active page corresponding to navigation links */
+nav a.active {
+    font-weight: bold;
+    border-bottom: 2px solid orange;
+
+}    
+
+/* Using flexbox to make content side by side */
+main {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* For alignment of body text on welcome page */
+#bio {
+    text-align: justify;
+    max-width: 700px;
+    line-height: 1.6;
+    font-size: 1em;
+}
+
+/* adds space between paragraphs */
+#bio p {
+    margin-bottom: 15px;
+}
+
+
+footer {
+    font-size: 0.8em;
+    color: gray;
+}
+
+table {
+    margin: 0px auto;
+}
+
+#table-header {
+    background-color: #565655;
+}
+
+.table-row {
+    background-color: #858584;
+}
+
+td {
+    padding-right: 10px;
+    font-size: 1.3em;
+    color: black;
+}
+
+td strong {
+    color: #000000;
+}
+
+/* aligns the table contents center */
+#content {
+    text-align: center;
+}
+
+/* For list */
+ul {
+    width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.section-title {
+    width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hobby {
+    color: orange;
+
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 650;  /* value between 300 and 800 */
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    font-size: 1em;
+}
+
+h3 {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;  /* value between 300 and 800 */
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    font-size: 1.5em;
+}
+
+/* To line quote under picture */
+.image_and_quote {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#quote {
+    text-align: center;
+    margin-top: 5px;
+    max-width: 350px;
+    font-size: 0.85em;
+}

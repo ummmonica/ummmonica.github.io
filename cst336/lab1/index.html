@@ -1,11 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab 1: Personal Portfolio</title>
-</head>
-<body>
-   <h1>Lab 1: Personal Portfolio </h1>
-</body>
+<html>
+
+    <head>
+        <!-- Setting character set to UTF-8 -->
+        <meta charset ="UTF-8">
+        <title>Monica Um: Portfolio</title>
+
+        <!-- Affects the body of webpage (external style) -->
+        <link href="style.css" rel="stylesheet">
+
+        <!-- Import font -->
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=WindSong:wght@400;500&display=swap" rel="stylesheet">
+    </head>
+
+<!-- -------------------------------------------- -->
+
+    <body>
+
+        <header>
+            <!-- The bigger the number, the smaller the heading -->
+            <h1>Monica Um</h1>
+        </header>
+
+        <!-- horizontal rule adds a line -->
+        <hr>
+
+        <!-- Clickable Links -->
+        <nav>
+            <a href="index.html" class="active"> Home </a>
+            <a href="about.html"> About </a>
+            <a href="contact.html"> Contact </a>
+        </nav>
+
+        <!-- Adds break between content -->
+        <br><br>        
+
+    <!-- -------------------------------- -->
+
+        <main>
+            
+            <div class = "image_and_quote">
+                <!-- Add Picture -->
+                <figure>
+                    <img src="img/Monica_Um.jpg" alt="Monica Um's Image">
+                </figure>
+
+                <div id = "quote">
+                    <em>"Curiosity will conquer fear even more than bravery will." - James Stephens</em>
+                    <br>
+                    
+                </div>
+            </div>
+
+            <div id = "bio">
+                Hello! <br />
+                <p> Thank you for visiting my profesionnal portfolio website. </p>
+
+                <p>I am pursuing a degree in Computer Science at CSUMB. Prior to the COVID pandemic, I had never even knew about Computer Science. It was not until I read a headline that Harvard had made a CS50 course available online for free that I decided to enroll in the course out of curiousity. Afterwards, I was hooked by the endless possibilities this skill could unlock. I decided to let curiousity be the motivation to my different pursuits. It led me down a path of electronics, as I became more curious of how the lines of code I wrote could manifest physically. Currently, I am an Avionics Technician for General Atomics, pursuing this degree with goals of entering an Engineering Positon. </p>
+
+                <p>You may contact me using the "Contact" tab and entering your information. </p>
+
+                <br><br>
+<!-- 
+                <em>"Curiosity will conquer fear even more than bravery will."</em>
+                <br>
+                - James Stephens -->
+            </div>
+
+        </main>
+        
+        
+        
+        <footer>
+            <!-- Your last name and year here in ALL assignments -->
+            <hr>
+            CST336 Internet Programming. 2025&copy; Um 
+
+            <br>
+
+            <strong>Disclaimer:</strong> The contents of this webpage is strictly for academic use only. 
+            
+            <br>
+
+            <!-- Insert CSUMB Logo -->
+            <figure>
+                <img src="img/logo.png" alt="CSUMB Logo">
+            </figure>
+
+        </footer>
+        
+    </body>
+
+<!-- ------------------------------------------------------ -->
+
 </html>
