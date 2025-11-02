@@ -48,6 +48,11 @@ main {
     font-variation-settings:
         "wdth" 100;
     font-size: 1em;
+
+    /* add shadows to elements */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    padding: 30px;
+    background-color: rgba(203, 178, 115, 0.407);
 }
 
 #heading {
@@ -81,18 +86,32 @@ nav a.active {
 }
 
 /* for 'first programmer' */
-#ada {
+#images {
     float: left; /*this allows for text to wrap around image*/
     margin-right: 25px;
     margin-bottom: 20px;
 }
 
+/* round borders of images */
+#images img {
+    border-radius: 15px;
+}
+
 /* targets the div */
-.ada_bio {
+.article {
     text-align: justify;
 }
 
 /* targets the paragraph inside the div */
-.ada_bio p {
+.article p {
     margin-bottom: 15px;
+}
+
+.references {
+    font-size: 0.6em;
+    margin-top: 60px;
+    text-align: left;
+    max-width: 1000px;
+    margin-left: 20px;
+    margin-right: auto;
 }
