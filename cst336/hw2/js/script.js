@@ -79,7 +79,7 @@ function gradeQuiz () {
     let q4Response = document.querySelector("input[name = q4]:checked").value;
     let q5Response = document.querySelector("#q5").value.toLowerCase();
     let q6Response = document.querySelector("#q6").value;
-    let q7Response = document.querySelector("#q7").value;
+    let q7Response = document.querySelector("#q7").value.toLowerCase();
     let q9Response = document.querySelector("input[name = q9]:checked").value;
     let q10Response = document.querySelector("input[name = q10]:checked").value;
 
@@ -136,7 +136,7 @@ function gradeQuiz () {
     }
 
     // Q7
-    if (q7Response == "Chicago") {
+    if (q7Response == "chicago") {
         rightAnswer(7);
     }
     else {
@@ -177,8 +177,6 @@ function gradeQuiz () {
         document.querySelector("#totalScore").innerHTML = (`Total Score: ${score} - NICE JOB!`);
         document.querySelector("#totalScore").className = "text-success";
     }
-
-    
 
     // Display tota number of attempts
     document.querySelector("#totalAttempts").innerHTML = `Total Attempts: ${++attempts}`;
