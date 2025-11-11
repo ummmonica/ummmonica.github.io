@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+    <head>
+        <meta charset = "UTF-8">
+        <title> US Geography Quiz </title>
+
+        <link rel = "stylesheet"
+            href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+        <!-- shuffle library -->
+        <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.2/underscore-umd-min.js"> </script>
+
+    </head>
+
+    <body class = "text-center">
+        <h1 class = "p-5 bg-info"> US Georgraphy Quiz </h1>
+
+        <!-- Question 1 -->
+        <h3> <span id = "markImg1"></span> What is the capital of California? </h3>
+        <input type = "text" id = "q1">
+
+        <div id = "q1Feedback"></div>
+
+        <br><br>
+
+        <!-- Question 2 -->
+        <h3> <span id = "markImg2"></span> What is the longest river? </h3>
+        <select id = "q2">
+            <option value = ""> Select One </option>
+            <option value = "ms"> Mississippi </option>
+            <option value = "mo"> Missouri </option>
+            <option value = "co"> Colorado </option>
+            <option value = "de"> Delaware </option>
+        </select>
+
+        <div id = "q2Feedback"></div>
+
+        <br><br>
+
+        <!-- Question 3 -->
+        <h3><span id = "markImg3"></span> What presidents are carved into mount Rushmore? </h3>
+        <input type = "checkbox" id = "Jackson"> <label for = "Jackson"> A. Jackson </label> 
+        <input type = "checkbox" id = "Franklin"> <label for = "Franklin"> B. Franklin </label> 
+        <input type = "checkbox" id = "Jefferson"> <label for = "Jefferson"> T. Jefferson </label> 
+        <input type = "checkbox" id = "Roosevelt"> <label for = "Roosevelt"> T. Roosevelt </label> 
+
+        <div id = "q3Feedback"></div>
+
+        <br><br>
+
+        <!-- Question 4 -->
+        <h3><span id = "markImg4"></span> What is the smallest US State? </h3>
+        <!-- to randomize the questions -->
+        <div id = "q4Choices"></div>
+
+        <div id = "q4Feedback"></div>
+
+        <br><br>
+
+        <!-- Question 5 -->
+        <h3> <span id = "markImg5"></span> What is the name of the ship that brought the Pilgrims to America? </h3>
+        <input type = "text" id = "q5">
+
+        <div id = "q5Feedback"></div>
+
+        <br><br>
+
+        <!-- Question 6 -->
+        <h3> <span id = "markImg6"></span> The American Revolutions turning point was considered to be the Battle of </h3>
+        <select id = "q6">
+            <option value = ""> Select One </option>
+            <option value = "su"> Fort Sumter </option>
+            <option value = "sa"> Saratoga </option>
+            <option value = "ge"> Gettysburg </option>
+            <option value = "tr"> Trenton </option>
+        </select>
+
+        <div id = "q6Feedback"></div>
+
+        <br><br>
+
+        <!-- Question 7 -->
+        <h3> <span id = "markImg7"></span> What year was the Boston Massacre? </h3>
+        <input type = "text" id = "q7">
+
+        <div id = "q7Feedback"></div>
+
+        <br><br>
+
+        <!-- Question 8 -->
+        <h3><span id = "markImg8"></span> Which countries were NOT part of the Allies during WW2? </h3>
+        <input type = "checkbox" id = "Kingdom"> <label for = "Kingdom"> United Kingdom </label> 
+        <input type = "checkbox" id = "Italy"> <label for = "Italy"> Italy </label> 
+        <input type = "checkbox" id = "France"> <label for = "France"> France </label> 
+        <input type = "checkbox" id = "Japan"> <label for = "Japan"> Japan </label> 
+
+        <div id = "q8Feedback"></div>
+
+        <br><br>         
+
+        <!-- Question 9 -->
+        <h3> <span id = "markImg9"></span> How much did the United States pay France for the Louisiana territory? </h3>
+        <!-- to randomize the questions -->
+        <div id = "q9Choices"></div>
+
+        <div id = "q9Feedback"></div>
+
+        <br><br>
+
+        <!-- Question 10 -->
+        <h3><span id = "markImg10"></span> Which country gifted the Lady of Liberty to the United States?</h3>
+        <input type = "radio" name = "q10" id = "en" value = "England"> <label for = "en"> England </label>
+        <input type = "radio" name = "q10" id = "fr" value = "France"> <label for = "fr"> France </label>
+        <input type = "radio" name = "q10" id = "sp" value = "Spain"> <label for = "sp"> Spain </label>
+        <input type = "radio" name = "q10" id = "it" value = "Italy"> <label for = "it"> Italy </label>
+
+        <div id = "q10Feedback"></div>
+
+        <!-- feedback from validation process -->
+        <h3 id = "validationFdbk" class = "text-danger"> </h3>
+         
+        <button class = "btn btn-outline-primary"> Submit Quiz </button>
+
+        <br>
+
+        <h2 id = "totalScore" class = "text-info"></h2>
+
+        <!-- displays number of attempts using web storage -->
+        <h3 id = "totalAttempts"></h3>
+
+        <!-- good practice is to put just before end of body -->
+        <script src = "js/script.js"></script>
+
+
+        <footer>
+            <!-- Your last name and year here in ALL assignments -->
+            <hr>
+            CST336 Internet Programming. 2025&copy; Um 
+
+            <br>
+
+            <strong>Disclaimer:</strong> The contents of this webpage is strictly for academic use only. 
+            
+            <br>
+
+            <!-- Insert CSUMB Logo -->
+            <figure>
+                <img src="img/logo.png" alt="CSUMB Logo">
+            </figure>
+
+        </footer>
+        
+    </body>
+
+    </body>
+
+</html>
