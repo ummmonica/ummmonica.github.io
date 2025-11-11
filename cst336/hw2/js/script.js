@@ -23,7 +23,7 @@ function displayQ4Choices() {
 displayQ9Choices();
 
 function displayQ9Choices() {
-    let q9ChoicesArray = ["$10 million", "$15 million", "$20 million", "$25 million"];
+    let q9ChoicesArray = ["Spain", "France", "Great Britain", "Mexico"];
     
     q9ChoicesArray = _.shuffle(q9ChoicesArray);
 
@@ -120,7 +120,7 @@ function gradeQuiz () {
     }
 
     // Q5
-    if (q5Response == "mayflower") {
+    if (q5Response == "florida") {
         rightAnswer(5);
     }
     else {
@@ -136,7 +136,7 @@ function gradeQuiz () {
     }
 
     // Q7
-    if (q7Response == "1770") {
+    if (q7Response == "Chicago") {
         rightAnswer(7);
     }
     else {
@@ -153,7 +153,7 @@ function gradeQuiz () {
     }   
 
     // Q9
-    if (q9Response == "$15 million") {
+    if (q9Response == "France") {
         rightAnswer(9);
     }
     else {
