@@ -1,0 +1,13 @@
+body {
+    background: linear-gradient(to top, #87ceeb, #beecf4)
+}
+
+.bg-info {
+    background-color: #beecf4 !important;
+}
+
+hr {
+    border: 2px solid #444;
+    width: 80%;
+    margin: 20px auto;
+}
