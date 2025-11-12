@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> Sign Up Page </title>
+        <link rel = "stylesheet" href = "style.css">
+    </head>
+
+    <body>
+        <h1> Sign Up </h1>
+        <!-- TEXT -->
+        First Name: <input type = "text" name = "fName"> <br>
+        Last Name: <input type = "text" name = "lName"> <br>
+
+        <!-- RADIO BUTTONS -->
+        Gender:
+            <input type = "radio" name = "gender" value = "m">Male 
+            <input type = "radio" name = "gender" value = "f">Female<br>
+        Zip Code: <input type = "text" id = "zip"><br>
+        City: <span id = "city"> </span><br>
+        Latitude: <span id = "latitude"></span><br>
+        Longitude: <span id = "longitude"></span><br><br>
+
+        State: 
+        <!-- DROP DOWN MENU (SELECT) -->
+        <!-- use 'value' for option within <select>. must use NAME attribute to be grouped -->
+        <select id = "state" name = "state">
+            <option> Select One </option>
+            <option value = "ca">California</option>
+            <option value = "ny">New York</option>
+            <option value = "tx">Texas</option>
+        </select><br>
+
+        Select a County: <select id = "county"></select><br><br>
+
+        Desired Username: <input type = "text" id = "username"><br>
+
+        <!-- PASSWORD -->
+        <!-- hides password instead of showing text -->
+        Password: <input type = "password">
+            <span id = "suggestedPwd"></span><br>
+        Type Password Again: <input type = "password"><br>
+            <span id = "passwordError"></span>
+
+        <!-- SUBMIT BUTTON -->
+        <input type = "submit" value = "Sign Up!">
+
+        <!-- FOOTER -->
+        <footer>
+            <!-- Your last name and year here in ALL assignments -->
+            <hr>
+            CST336 Internet Programming. 2025&copy; Um 
+
+            <br>
+
+            <strong>Disclaimer:</strong> The contents of this webpage is strictly for academic use only. 
+            
+            <br>
+
+            <!-- Insert CSUMB Logo -->
+            <figure>
+                <img src="img/logo.png" alt="CSUMB Logo">
+            </figure>
+        </footer>
+
+        <script src = "js\script.js"></script>
+    </body>
+</html>
