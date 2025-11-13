@@ -22,14 +22,22 @@ async function displayCity() {
     let data = await response.json();
     console.log(data);
 
-    // display city name from this zipcode
-    document.querySelector("#city").innerHTML = data.city;
+    if (data.city) {
+        // display city name from this zipcode
+        document.querySelector("#city").innerHTML = data.city;
+        // display latitude from this zipcode
+        document.querySelector("#latitude").innerHTML = data.latitude;
+        // display longitude from this zipcode
+        document.querySelector("#longitude").innerHTML = data.longitude;        
+    }
+    // zipcode is invalid if no info populates from API
+    else {
+        // making empty for validate function
+        document.querySelector("#city").innerHTML = "";
+        document.querySelector("#latitude").innerHTML = "";
+        document.querySelector("#longitude").innerHTML = "";
+    }
 
-    // display latitude from this zipcode
-    document.querySelector("#latitude").innerHTML = data.latitude;
-
-    // display longitude from this zipcode
-    document.querySelector("#longitude").innerHTML = data.longitude;
 }
 
 // To display counties from web API
@@ -77,15 +85,22 @@ function validateForm(e) {
     let passOne = document.querySelector("#passOne").value;
     let passTwo = document.querySelector("#passTwo").value;
     let city = document.querySelector("#city").innerHTML; // because has no value, it prints the city from API
+    let zipcode = document.querySelector("#zip").value;
 
     // to clear errors after requirement is met
     document.querySelector("#usernameError").innerHTML = "";
     document.querySelector("#passwordError").innerHTML = "";
     document.querySelector("#zipError").innerHTML = "";
 
+    // // check that a zipcode is entered
+    // if (zipcode.length < 5) {
+    //     document.querySelector("#zipError").innerHTML = "Please enter a zip code";
+    //     document.querySelector("#zipError").style.color = "red";
+    // }
+
     // // check if zipcode is valid by whether or not a city is populated
-    // if (city == "undefined" || city.length == 0 || city == "false") {
-    //     document.querySelector("#zipError").innerHTML = "Zipcode not found!";
+    // if (city.trim().length == 0) {
+    //     document.querySelector("#zipError").innerHTML = "Please enter a valid zipcode!";
     //     document.querySelector("#zipError").style.color = "red";
 
     //     isValid = false;
