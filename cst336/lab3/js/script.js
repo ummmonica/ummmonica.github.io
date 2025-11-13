@@ -4,6 +4,10 @@
 document.querySelector("#zip").addEventListener("change", displayCity);
 // event listener from state (this will generate the 'county' section)
 document.querySelector("#state").addEventListener("change", displayCounties);
+// event listener to check if a username is available
+document.querySelector("#username").addEventListener("change", checkUsername);
+// event listener to validate form. requires a parameter
+document.querySelector("#signupForm").addEventListener("submit", function(event) {validateForm(event)});
 
 // display city from web API after zip code entered
 async function displayCity() {
@@ -45,5 +49,65 @@ async function displayCounties() {
     // loop to display all the counties for a state
     for (let i = 0; i < data.length; i++) {
         countyList.innerHTML += `<option> ${data[i].county} </option>`;
+    }
+}
+
+async function checkUsername() {
+    let username = document.querySelector("#username").value;
+
+    // fetching APIs
+    let url = `https://csumb.space/api/usernamesAPI.php?username=${username}`;
+    let response = await fetch(url);
+    let data = await response.json();
+    let usernameError = document.querySelector("#usernameError");
+
+    if (data.available) {
+        usernameError.innerHTML = " Username Available!";
+        usernameError.style.color = "green";
+    }
+    else {
+        usernameError.innerHTML = " Username Taken";
+        usernameError.style.color = "red";
+    }
+}
+
+function validateForm(e) {
+    let isValid = true;
+    let username = document.querySelector("#username").value;
+    let passOne = document.querySelector("#passOne").value;
+    let passTwo = document.querySelector("#passTwo").value;
+
+    // to clear errors after requirement is met
+    document.querySelector("#usernameError").innerHTML = "";
+    document.querySelector("#passwordError").innerHTML = "";
+
+    // check for username
+    if (username.length == 0) {
+        document.querySelector("#usernameError").innerHTML = "Username Required!";
+
+        usernameError.style.color = "red";
+
+        isValid = false;
+    }
+
+    // check password length
+    if (passOne.length < 6) {
+        document.querySelector("#passwordError").innerHTML = "Password must be at least 6 characters long!";
+        passwordError.style.color = "red";
+
+        isValid = false;
+    }
+
+    // check password matches
+    if (passOne != passTwo) {
+        document.querySelector("#passwordError").innerHTML = "Passwords must match!";
+        passwordError.style.color = "red";
+
+        isValid = false;
+    }
+
+    // prevents moving on without complete data
+    if (!isValid) {
+        e.preventDefault();
     }
 }

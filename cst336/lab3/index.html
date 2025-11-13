@@ -2,48 +2,55 @@
 
 <html>
     <head>
+        <meta charset = "UTF-8">
         <title> Sign Up Page </title>
         <link rel = "stylesheet" href = "style.css">
     </head>
 
     <body>
         <h1> Sign Up </h1>
-        <!-- TEXT -->
-        First Name: <input type = "text" name = "fName"> <br>
-        Last Name: <input type = "text" name = "lName"> <br>
 
-        <!-- RADIO BUTTONS -->
-        Gender:
-            <input type = "radio" name = "gender" value = "m">Male 
-            <input type = "radio" name = "gender" value = "f">Female<br>
-        Zip Code: <input type = "text" id = "zip"><br>
-        City: <span id = "city"> </span><br>
-        Latitude: <span id = "latitude"></span><br>
-        Longitude: <span id = "longitude"></span><br><br>
+        <!-- <form> tag required for data being submitted to for new page after submission -->
+        <form id = "signupForm" action = "welcome.html">
 
-        State: 
-        <!-- DROP DOWN MENU (SELECT) -->
-        <!-- use 'value' for option within <select>. must use NAME attribute to be grouped -->
-        <select id = "state" name = "state">
-            <option> Select One </option>
-            <option value = "ca">California</option>
-            <option value = "ny">New York</option>
-            <option value = "tx">Texas</option>
-        </select><br>
+            <!-- TEXT -->
+            First Name: <input type = "text" name = "fName"> <br>
+            Last Name: <input type = "text" name = "lName"> <br>
 
-        Select a County: <select id = "county"></select><br><br>
+            <!-- RADIO BUTTONS -->
+            Gender:
+                <input type = "radio" name = "gender" value = "m">Male 
+                <input type = "radio" name = "gender" value = "f">Female<br>
+            Zip Code: <input type = "text" id = "zip"><br>
+            City: <span id = "city"> </span><br>
+            Latitude: <span id = "latitude"></span><br>
+            Longitude: <span id = "longitude"></span><br><br>
 
-        Desired Username: <input type = "text" id = "username"><br>
+            State: 
+            <!-- DROP DOWN MENU (SELECT) -->
+            <!-- use 'value' for option within <select>. must use NAME attribute to be grouped -->
+            <select id = "state" name = "state">
+                <option> Select One </option>
+                <option value = "ca">California</option>
+                <option value = "ny">New York</option>
+                <option value = "tx">Texas</option>
+            </select><br>
 
-        <!-- PASSWORD -->
-        <!-- hides password instead of showing text -->
-        Password: <input type = "password">
-            <span id = "suggestedPwd"></span><br>
-        Type Password Again: <input type = "password"><br>
-            <span id = "passwordError"></span>
+            Select a County: <select id = "county"></select><br><br>
 
-        <!-- SUBMIT BUTTON -->
-        <input type = "submit" value = "Sign Up!">
+            Desired Username: <input type = "text" id = "username"><br>
+            <span id = "usernameError"></span><br>
+
+            <!-- PASSWORD -->
+            <!-- hides password instead of showing text -->
+            Password: <input id = "passOne" type = "password">
+                <span id = "suggestedPwd"></span><br>
+            Type Password Again: <input id = "passTwo" type = "password"><br>
+                <span id = "passwordError"></span><br><br>
+
+            <!-- SUBMIT BUTTON -->
+            <input type = "submit" value = "Sign Up!">
+        </form>
 
         <!-- FOOTER -->
         <footer>
