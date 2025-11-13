@@ -76,16 +76,26 @@ function validateForm(e) {
     let username = document.querySelector("#username").value;
     let passOne = document.querySelector("#passOne").value;
     let passTwo = document.querySelector("#passTwo").value;
+    let city = document.querySelector("#city").innerHTML; // because has no value, it prints the city from API
 
     // to clear errors after requirement is met
     document.querySelector("#usernameError").innerHTML = "";
     document.querySelector("#passwordError").innerHTML = "";
+    document.querySelector("#zipError").innerHTML = "";
+
+    // // check if zipcode is valid by whether or not a city is populated
+    // if (city == "undefined" || city.length == 0 || city == "false") {
+    //     document.querySelector("#zipError").innerHTML = "Zipcode not found!";
+    //     document.querySelector("#zipError").style.color = "red";
+
+    //     isValid = false;
+    // }
 
     // check for username
     if (username.length == 0) {
         document.querySelector("#usernameError").innerHTML = "Username Required!";
 
-        usernameError.style.color = "red";
+        document.querySelector("#usernameError").style.color = "red";
 
         isValid = false;
     }
@@ -93,7 +103,7 @@ function validateForm(e) {
     // check password length
     if (passOne.length < 6) {
         document.querySelector("#passwordError").innerHTML = "Password must be at least 6 characters long!";
-        passwordError.style.color = "red";
+        document.querySelector("#passwordError").style.color = "red";
 
         isValid = false;
     }
@@ -101,7 +111,7 @@ function validateForm(e) {
     // check password matches
     if (passOne != passTwo) {
         document.querySelector("#passwordError").innerHTML = "Passwords must match!";
-        passwordError.style.color = "red";
+        document.querySelector("#passwordError").style.color = "red";
 
         isValid = false;
     }

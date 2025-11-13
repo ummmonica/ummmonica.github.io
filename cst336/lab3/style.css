@@ -1,8 +1,28 @@
+/* flexbox helps to center contents while justifying left */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    width: 500px;
+    text-align: left;
+}
+
+/* to help center the submit button */
+input[type = "submit"] {
+    display: block;
+    margin: 20px auto;
+}
+
 footer {
     text-align: center;
     padding-top: 60px;
     font-size: 0.8em;
     color: gray;
+    /* flexbox constrains the length to 500px, this will fix */
+    width: 100%;
 }
 
 figure {
