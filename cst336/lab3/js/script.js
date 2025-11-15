@@ -29,6 +29,8 @@ async function displayCity() {
         document.querySelector("#latitude").innerHTML = data.latitude;
         // display longitude from this zipcode
         document.querySelector("#longitude").innerHTML = data.longitude;        
+        // if city populates, then zipcode is valid
+        document.querySelector("#zipValidated").value = "true";
     }
     // zipcode is invalid if no info populates from API
     else {
@@ -36,9 +38,33 @@ async function displayCity() {
         document.querySelector("#city").innerHTML = "";
         document.querySelector("#latitude").innerHTML = "";
         document.querySelector("#longitude").innerHTML = "";
+        // this is added to help validate zip code
+        document.querySelector("#zipValidated").value = "false";
     }
 
 }
+
+// to display all 50 states instead of being hardcoded
+async function displayStates() {
+    let url = "https://gist.githubusercontent.com/mshafrir/2646763/raw/8b0dbb93521f5d6889502305335104218454c2bf/states_titlecase.json";
+    let response = await fetch (url);
+    let data = await response.json();
+    console.log(data);
+
+    // adding excluded list because this is the best API I could find, but it included extras 
+    let excluded = ['AS', 'DC', 'FM', 'GU', 'MH', 'MP', 'PW', 'PR', 'VI', 'AA', 'AE', 'AP'];
+    let stateDropdown = document.querySelector("#state");
+    stateDropdown.innerHTML = "<option>Select One</option>";
+
+    for (let i = 0; i < data.length; i++) {
+        if (!excluded.includes(data[i].abbreviation)) {
+            stateDropdown.innerHTML += `<option value="${data[i].abbreviation.toLowerCase()}">${data[i].name}</option>`;
+        }
+        
+    }
+}
+
+displayStates();
 
 // To display counties from web API
 async function displayCounties() {
@@ -84,8 +110,8 @@ function validateForm(e) {
     let username = document.querySelector("#username").value;
     let passOne = document.querySelector("#passOne").value;
     let passTwo = document.querySelector("#passTwo").value;
-    let city = document.querySelector("#city").innerHTML; // because has no value, it prints the city from API
     let zipcode = document.querySelector("#zip").value;
+    let zipValidated = document.querySelector("#zipValidated").value;
 
     // to clear errors after requirement is met
     document.querySelector("#usernameError").innerHTML = "";
@@ -93,18 +119,17 @@ function validateForm(e) {
     document.querySelector("#zipError").innerHTML = "";
 
     // // check that a zipcode is entered
-    // if (zipcode.length < 5) {
-    //     document.querySelector("#zipError").innerHTML = "Please enter a zip code";
-    //     document.querySelector("#zipError").style.color = "red";
-    // }
-
-    // // check if zipcode is valid by whether or not a city is populated
-    // if (city.trim().length == 0) {
-    //     document.querySelector("#zipError").innerHTML = "Please enter a valid zipcode!";
-    //     document.querySelector("#zipError").style.color = "red";
-
-    //     isValid = false;
-    // }
+    if (zipcode.length == 0) {
+        document.querySelector("#zipError").innerHTML = "Please enter a zip code";
+        document.querySelector("#zipError").style.color = "red";
+        isValid = false;
+    }
+    // check if zipcode is valid by whether or not a city is populated
+    else if (zipValidated == "false") {
+        document.querySelector("#zipError").innerHTML = "Please enter a valid zipcode!";
+        document.querySelector("#zipError").style.color = "red";
+        isValid = false;
+    }
 
     // check for username
     if (username.length == 0) {
