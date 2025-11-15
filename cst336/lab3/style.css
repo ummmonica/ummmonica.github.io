@@ -3,8 +3,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(to bottom, tan, white);
+    background: linear-gradient(to top, tan, rgb(237, 224, 206));
     min-height: 100vh;
+    line-height: 1.6;
 }
 
 h1 {
@@ -12,6 +13,7 @@ h1 {
   font-weight: 600;
   font-style: bold;
   font-size: 50px;
+  letter-spacing: 2px;
 }
 
 #welcome {
@@ -26,12 +28,19 @@ form {
     width: 500px;
     text-align: left;
     font-size: 20px;
+
+    /* adds a box around form */
+    padding: 40px;
+    max-width: 900px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2)
 }
 
-/* to help center the submit button */
+/* for submit button */
 input[type = "submit"] {
     display: block;
     margin: 20px auto;
+    cursor: pointer;
 }
 
 footer {

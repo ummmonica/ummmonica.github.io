@@ -31,6 +31,8 @@ async function displayCity() {
         document.querySelector("#longitude").innerHTML = data.longitude;        
         // if city populates, then zipcode is valid
         document.querySelector("#zipValidated").value = "true";
+        // to clear the error after valid zip entered
+        document.querySelector("#zipError").innerHTML = "";
     }
     // zipcode is invalid if no info populates from API
     else {
@@ -113,11 +115,6 @@ function validateForm(e) {
     let zipcode = document.querySelector("#zip").value;
     let zipValidated = document.querySelector("#zipValidated").value;
 
-    // to clear errors after requirement is met
-    document.querySelector("#usernameError").innerHTML = "";
-    document.querySelector("#passwordError").innerHTML = "";
-    document.querySelector("#zipError").innerHTML = "";
-
     // // check that a zipcode is entered
     if (zipcode.length == 0) {
         document.querySelector("#zipError").innerHTML = "Please enter a zip code";
@@ -130,30 +127,37 @@ function validateForm(e) {
         document.querySelector("#zipError").style.color = "red";
         isValid = false;
     }
+    // clear error once good validation
+    else {
+        document.querySelector("#zipError").innerHTML = "";
+    }
 
     // check for username
     if (username.length == 0) {
         document.querySelector("#usernameError").innerHTML = "Username Required!";
-
         document.querySelector("#usernameError").style.color = "red";
-
         isValid = false;
+    }
+    // clear error
+    else {
+        document.querySelector("#usernameError").innerHTML =  "";
     }
 
     // check password length
     if (passOne.length < 6) {
         document.querySelector("#passwordError").innerHTML = "Password must be at least 6 characters long!";
         document.querySelector("#passwordError").style.color = "red";
-
         isValid = false;
     }
-
     // check password matches
-    if (passOne != passTwo) {
-        document.querySelector("#passwordError").innerHTML = "Passwords must match!";
+    else if (passOne != passTwo) {
+        document.querySelector("#passwordError").innerHTML = "Retype passwords. Passwords must match!";
         document.querySelector("#passwordError").style.color = "red";
-
         isValid = false;
+    }
+    // clear error
+    else {
+        document.querySelector("#passwordError").innerHTML = "";
     }
 
     // prevents moving on without complete data
