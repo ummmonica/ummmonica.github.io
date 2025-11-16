@@ -8,6 +8,8 @@ document.querySelector("#state").addEventListener("change", displayCounties);
 document.querySelector("#username").addEventListener("change", checkUsername);
 // event listener to validate form. requires a parameter
 document.querySelector("#signupForm").addEventListener("submit", function(event) {validateForm(event)});
+// event listener to suggest a password
+document.querySelector("#passOne").addEventListener("click", suggestPassword);
 
 // display city from web API after zip code entered
 async function displayCity() {
@@ -105,6 +107,15 @@ async function checkUsername() {
         usernameError.innerHTML = " Username Taken";
         usernameError.style.color = "red";
     }
+}
+
+async function suggestPassword() {
+    let url = "https://csumb.space/api/suggestedPassword.php?length=6";
+    let response = await fetch(url);
+    let data = await response.json();
+
+    document.querySelector("#suggestedPwd").innerHTML = "Suggested: " + data.password;
+    document.querySelector("#suggestedPwd").style.color = "blue";
 }
 
 function validateForm(e) {
