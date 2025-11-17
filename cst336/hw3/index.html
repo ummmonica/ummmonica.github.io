@@ -1,13 +1,24 @@
-
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset = "UTF-8">
+        <title>Rick and Morty Info</title>
         <link rel = "stylesheet" href = "style.css">
     </head>
     
     <body>
+        <h1>Want to Know More About a Character?</h1>
+        <h2>Enter their name</h2> <br>
 
+        <form id = "userInput" action = "info.html">
+            Character's Name: <input type = "text" name = "name"> 
+            <input type = "hidden" id = "nameValidated" value = false;>
+            <span id = "nameError"></span><br><br>
+
+            <input type = "submit" value = "Search">
+        </form>
+
+        <script src = "js\script.js"></script>
     </body>
 
     <footer>

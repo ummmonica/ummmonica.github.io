@@ -50,20 +50,20 @@ async function displayCity() {
 
 // to display all 50 states instead of being hardcoded
 async function displayStates() {
-    let url = "https://gist.githubusercontent.com/mshafrir/2646763/raw/8b0dbb93521f5d6889502305335104218454c2bf/states_titlecase.json";
+    let url = "https://csumb.space/api/allStatesAPI.php";
     let response = await fetch (url);
     let data = await response.json();
     console.log(data);
 
     // adding excluded list because this is the best API I could find, but it included extras 
-    let excluded = ['AS', 'DC', 'FM', 'GU', 'MH', 'MP', 'PW', 'PR', 'VI', 'AA', 'AE', 'AP'];
+    // let excluded = ['AS', 'DC', 'FM', 'GU', 'MH', 'MP', 'PW', 'PR', 'VI', 'AA', 'AE', 'AP'];
     let stateDropdown = document.querySelector("#state");
     stateDropdown.innerHTML = "<option>Select One</option>";
 
     for (let i = 0; i < data.length; i++) {
-        if (!excluded.includes(data[i].abbreviation)) {
-            stateDropdown.innerHTML += `<option value="${data[i].abbreviation.toLowerCase()}">${data[i].name}</option>`;
-        }
+        // if (!excluded.includes(data[i].abbreviation)) {
+            stateDropdown.innerHTML += `<option value="${data[i].usps.toLowerCase()}">${data[i].state}</option>`;
+        // }
         
     }
 }

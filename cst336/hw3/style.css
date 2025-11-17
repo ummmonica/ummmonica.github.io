@@ -1,5 +1,19 @@
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    padding-top: 120px;
+}
+
+#userInput {
+    text-align: center;
+}
+
 footer {
     text-align: center;
     font-size: 0.8em;
     color: gray;
+    padding-top: 120px;
 }
