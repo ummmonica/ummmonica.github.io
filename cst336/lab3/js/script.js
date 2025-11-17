@@ -55,16 +55,11 @@ async function displayStates() {
     let data = await response.json();
     console.log(data);
 
-    // adding excluded list because this is the best API I could find, but it included extras 
-    // let excluded = ['AS', 'DC', 'FM', 'GU', 'MH', 'MP', 'PW', 'PR', 'VI', 'AA', 'AE', 'AP'];
     let stateDropdown = document.querySelector("#state");
     stateDropdown.innerHTML = "<option>Select One</option>";
 
     for (let i = 0; i < data.length; i++) {
-        // if (!excluded.includes(data[i].abbreviation)) {
-            stateDropdown.innerHTML += `<option value="${data[i].usps.toLowerCase()}">${data[i].state}</option>`;
-        // }
-        
+            stateDropdown.innerHTML += `<option value="${data[i].usps.toLowerCase()}">${data[i].state}</option>`;        
     }
 }
 
