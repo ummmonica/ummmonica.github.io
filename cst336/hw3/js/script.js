@@ -21,14 +21,25 @@ async function searchCharacters() {
 
     // check if textbox is empty
     if (searchName == "") {
-        alert("Please enter a character name");
+        document.querySelector("#searchError").innerHTML = "If you know the character's name, please enter it now";
+        document.querySelector("#searchError").style.color = "red";
         return;
     }
+
+    // clear error
+    document.querySelector("#searchError").innerHTML = "";
 
     // fetch data from API
     let url = `https://rickandmortyapi.com/api/character/?name=` + searchName;
     let response = await fetch (url);
     let data = await response.json();
+
+    // check if character was found
+    if (data.error) {
+        document.querySelector("#searchError").innerHTML = "Please check spelling of name or search for the character below";
+        document.querySelector("#searchError").style.color = "red";
+        return;
+    }
 
     // display search results
     displayCharacters(data.results);
@@ -54,6 +65,7 @@ function displayCharacters(characters) {
         copy.style.display = "block";
         copy.removeAttribute("id");
 
+        // takes all available data from API to display for user
         copy.querySelector(".image").src = characters[i].image;
         copy.querySelector(".image").alt =  characters[i].name; // ensure the name is pulled for image alt
         copy.querySelector(".name").innerHTML = characters[i].name;

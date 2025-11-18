@@ -4,6 +4,10 @@
         <meta charset = "UTF-8">
         <title>Rick and Morty Info</title>
         <link rel = "stylesheet" href = "style.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Smooch+Sans:wght@100..900&family=Stack+Sans+Text:wght@200..700&family=WindSong:wght@400;500&display=swap" rel="stylesheet">
     </head>
     
     <body>
@@ -15,9 +19,12 @@
             <form id = "searchForm">
 
                 <!-- request input from user for character name -->
-                <input type = "text" id = "input" name = "search" placeholder = "Search by name..." required>
+                <input type = "text" id = "input" name = "search" placeholder = "Search by name...">
+                <br>
+                <span id = "searchError"></span>
+                <br>
 
-                <button type = "submit">Search</button> <br><br>
+                <button type = "submit">Search</button> <br>
 
                 <h3>Alternatively, you may look through all the characters here:</h3>
                 <!-- option to load characters from API -->

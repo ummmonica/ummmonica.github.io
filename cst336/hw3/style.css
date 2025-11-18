@@ -17,12 +17,21 @@ h1 {
 
 h2 {
     text-align: center;
-    padding-top: 120px;
-    font-weight: 750;
+    padding-top: 70px;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: bold;
+    font-variation-settings: "wdth" 100;
 }
 
 h3 {
     margin-top: 80px;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: bold;
+    font-variation-settings: "wdth" 100;
 }
 
 #userInput {
@@ -69,6 +78,15 @@ body {
     border: 2px solid #00b5cc;
     border-radius: 5px;
     width: 250px;
+}
+
+#searchError {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1.2);
 }
 
 #characterContainer {
