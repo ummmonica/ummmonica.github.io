@@ -7,18 +7,44 @@
     </head>
     
     <body>
-        <h1>Want to Know More About a Character?</h1>
-        <h2>Enter their name</h2> <br>
+        <h1>The Characters of Rick and Morty</h1>
+        <h2>Enter a character's name to learn more about them!</h2> <br>
 
-        <form id = "userInput" action = "info.html">
-            Character's Name: <input type = "text" name = "name"> 
-            <input type = "hidden" id = "nameValidated" value = false;>
-            <span id = "nameError"></span><br><br>
+        <div id = "options">
 
-            <input type = "submit" value = "Search">
-        </form>
+            <form id = "searchForm">
 
-        <script src = "js\script.js"></script>
+                <!-- request input from user for character name -->
+                <input type = "text" id = "input" name = "search" placeholder = "Search by name..." required>
+
+                <button type = "submit">Search</button> <br><br>
+
+                <h3>Alternatively, you may look through all the characters here:</h3>
+                <!-- option to load characters from API -->
+                <button id = "characters">View All Characters</button> <br><br>
+            </form>
+        </div>
+
+        <!-- using container to populate character's information -->
+        <div id = "container"></div>
+            <!-- placeholders for when API data is retrieved -->
+            <div class = "characterInfo" id = "template" style = "display: none;">
+                <img class = "image" src = "" alt = "">
+                <h3 class = "name"></h3>
+                <p><strong>Status:</strong>
+                    <span class = "status"></span>
+                <p><strong>Species:</strong>
+                    <span class = "species"></span>
+                <p><strong>Gender:</strong>
+                    <span class = "gender"></span>
+                <p><strong>Origin:</strong>
+                    <span class = "origin"></span>
+                <p><strong>Location:</strong>
+                    <span class = "location"></span>
+            </div>
+        </div>
+
+        <script src = "js/script.js"></script>
     </body>
 
     <footer>
