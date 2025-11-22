@@ -13,7 +13,6 @@ document.querySelector("#passOne").addEventListener("click", suggestPassword);
 
 // display city from web API after zip code entered
 async function displayCity() {
-    // alert(document.querySelector("#zip").value);
     let zipCode = document.querySelector("#zip").value;
     console.log(zipCode);
 
@@ -59,7 +58,7 @@ async function displayStates() {
     stateDropdown.innerHTML = "<option>Select One</option>";
 
     for (let i = 0; i < data.length; i++) {
-            stateDropdown.innerHTML += `<option value="${data[i].usps.toLowerCase()}">${data[i].state}</option>`;        
+        stateDropdown.innerHTML += `<option value="${data[i].usps.toLowerCase()}">${data[i].state}</option>`;        
     }
 }
 
