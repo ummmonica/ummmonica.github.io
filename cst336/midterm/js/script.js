@@ -30,12 +30,9 @@ async function displayQuote() {
     currentQuote = data;
 
     // display quote and author
-    document.querySelector("#displayQuote").innerHTML = `"${data.quote}`;
-    document.querySelector("#displayAuthor").innerHTML = ` - ${data.author}`;
+    document.querySelector("#displayQuote").innerHTML = `"${data.quoteText}`;
+    document.querySelector("#displayAuthor").innerHTML = ` - ${data.firstName} ${data.lastName}`;
 }
-
-// // randomize radio buttons
-// randomizeButtons();
 
 function randomizeButtons() {
     let languages = [
@@ -54,14 +51,10 @@ function randomizeButtons() {
 
 // to display author info
 function displayAuthor() {
-    // let url = `https://csumb.space/api/famousQuotes/getRandomQuote.php`;
-    // let response = await fetch(url);
-    // let data = await response.json();
-
     console.log("Author data: ", currentQuote);
 
     // display author photo
-    document.querySelector("#authorPic").src = currentQuote.authorPhoto;
+    document.querySelector("#authorPic").src = currentQuote.picture;
 
     // display author bio
     document.querySelector("#authorBio").innerHTML = currentQuote.bio;
