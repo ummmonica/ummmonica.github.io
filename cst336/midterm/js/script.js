@@ -26,7 +26,7 @@ async function displayQuote() {
     // track quoteId to be able to translate later
     quoteId = data.quoteId;
 
-        // TODO: store current quote so author info displays pic correctly
+    // store current quote so author info displays pic correctly
     currentQuote = data;
 
     // display quote and author
@@ -90,10 +90,10 @@ async function translateQuote() {
 
     // display the relevant flag
     let flagImages = {
-        "ES": "img/esperanto.png",
-        "EN": "img/english.png",
-        "SP": "img/spanish.png",
-        "FR": "img/french.png" 
+        "ES": "img/esperanto_flag.png",
+        "EN": "img/english_flag.png",
+        "SP": "img/spanish_flag.png",
+        "FR": "img/french_flag.png" 
     };
 
     document.querySelector("#flag").src = flagImages[lang];
@@ -127,11 +127,10 @@ async function getQuote() {
     // print the quotes by cat
     for (let i = 0; i < data.length; i++) {
         quotes += `<div class = "quotes">
-                    <p>"${data[i].quote}"</p>
-                    <p><em>- ${data[i].author}</em></p>
+                    <p>"${data[i].quoteText}"</p>
+                    <p><em>- ${data[i].firstName} ${data[i].lastName}</em></p>
                    </div>`;
     }
-
     document.querySelector("#numQuotes").innerHTML = quotes;
 }
 

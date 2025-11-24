@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<%- include('partials/head.ejs') %>
+<style>
+    body {
+        background-image: url("<%= backgroundImg %>");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+</style>
+<body>
+    <h1>The Solar System</h1>
+    <%- include('partials/nav.ejs') %>
+    
+    <img src="/img/system.jpg" alt="Solar System Overview">
+    
+    <div class="planet-description">
+        <h2>Welcome to Solar System Explorer</h2>
+        <p>Discover the amazing planets in our solar system. Click on any planet above to learn more about its unique characteristics, composition, and fascinating facts!</p>
+    </div>
+    
+    <%- include('partials/footer.ejs') %>
+</body>
+</html>

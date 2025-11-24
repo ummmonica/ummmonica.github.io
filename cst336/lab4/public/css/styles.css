@@ -1,0 +1,71 @@
+body {
+    background-color: #1a1a2e;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    color: #eee;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #ffd700;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+h2 {
+    color: #87ceeb;
+    font-size: 2em;
+    margin: 30px 0;
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    margin: 20px auto;
+    border-radius: 10px;
+    max-width: 900px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    display: inline-block;
+    background-color: #4a5568;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: #2d3748;
+    color: #ffd700;
+}
+
+img {
+    max-width: 600px;
+    width: 90%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    margin: 20px 0;
+}
+
+.planet-description {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    line-height: 1.6;
+}
+
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    font-size: 0.9em;
+}
